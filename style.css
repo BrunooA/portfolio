@@ -27,11 +27,7 @@ body {
 
 /* HERO */
 .hero {
-  background: linear-gradient(
-    180deg,
-    #0b1220 0%,
-    #0d1424 100%
-  );
+  background: linear-gradient(180deg, #0b1220 0%, #0d1424 100%);
   padding: 120px 10% 100px;
   text-align: center;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
@@ -55,16 +51,7 @@ body {
   margin: 10px 0;
 }
 
-.tech-icons {
-  margin-top: 10px;
-}
-
-.tech-icons i {
-  font-size: 1.6rem;
-  color: #3b82f6;
-  margin: 0 6px;
-}
-
+/* SOCIAL */
 .social-icons {
   margin-top: 20px;
 }
@@ -95,93 +82,6 @@ body {
   color: #9ca3af;
   font-size: 1.1rem;
   line-height: 1.6;
-}
-
-/* PROJETOS */
-.projects {
-  padding: 80px 10%;
-}
-
-.projects h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2rem;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.project-card {
-  background: #161b22;
-  padding: 20px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  background: #1f2937;
-}
-
-.project-card i {
-  color: #3b82f6;
-}
-
-/* MODAL */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
-
-.modal-content {
-  background: #161b22;
-  padding: 30px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 500px;
-}
-
-#close-modal {
-  float: right;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-/* ANIMAÇÃO */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* TEMA CLARO */
-body.light {
-  background: #f9fafb;
-  color: #111827;
-}
-
-body.light .project-card,
-body.light .modal-content {
-  background: #ffffff;
-}
-
-body.light .hero p,
-body.light .about p {
-  color: #4b5563;
 }
 
 .about-intro {
@@ -254,13 +154,41 @@ body.light .about p {
   opacity: 0.9;
 }
 
-/* Tema claro */
-body.light .about-card {
-  background: #ffffff;
+/* PROJETOS */
+.projects {
+  padding: 80px 10%;
 }
 
-/*linha de tempo*/
+.projects h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
 
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #161b22;
+  padding: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  background: #1f2937;
+}
+
+.project-card i {
+  color: #3b82f6;
+}
+
+/* TIMELINE */
 .timeline {
   padding: 100px 10%;
 }
@@ -325,41 +253,79 @@ body.light .about-card {
   font-size: 0.95rem;
 }
 
-/* Destaque do estágio */
 .timeline-card.highlight {
   border: 1px solid #3b82f6;
 }
 
-/* Tema claro */
-body.light .timeline-card {
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #161b22;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+}
+
+#close-modal {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ANIMAÇÃO */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.light {
+  background: #f9fafb;
+  color: #111827;
+}
+
+/* HERO */
+body.light .hero {
+  background: linear-gradient(180deg, #e5e7eb 0%, #f9fafb 100%);
+}
+
+body.light .hero h1 {
+  color: #111827;
+}
+
+body.light .hero p {
+  color: #4b5563;
+}
+
+/* CARDS */
+body.light .about-card,
+body.light .project-card,
+body.light .timeline-card,
+body.light .modal-content {
   background: #ffffff;
 }
 
-body.light .timeline-card p {
-  color: #4b5563;
-}
-
-.profile-focus {
-  margin-top: 60px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.profile-focus h3 {
-  margin-bottom: 20px;
-  font-size: 1.4rem;
-}
-
-.profile-focus p {
-  margin-bottom: 16px;
-  color: #9ca3af;
-  line-height: 1.7;
-  font-size: 1rem;
-}
-
-/* Tema claro */
+/* TEXTOS */
+body.light .about p,
+body.light .about-intro,
+body.light .about-card p,
+body.light .about-cta p,
+body.light .timeline-card p,
 body.light .profile-focus p {
   color: #4b5563;
 }
-
