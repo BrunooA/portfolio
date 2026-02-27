@@ -8,8 +8,8 @@ const themeToggle = document.getElementById("theme-toggle");
 
 const GITHUB_USER = "BrunooA";
 const MAX_PROJECTS = 4;
-const FEATURED_TOPIC = "featured";
 
+/* TEMA */
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("light");
@@ -19,37 +19,25 @@ if (themeToggle) {
   });
 }
 
+/* MODAL */
 if (closeModal && modal) {
   closeModal.onclick = () => (modal.style.display = "none");
-
   window.onclick = (e) => {
     if (e.target === modal) modal.style.display = "none";
   };
 }
 
-
+/* PROJETOS GITHUB */
 async function loadProjects() {
   if (!projectsGrid) return;
 
   try {
     const res = await fetch(
-      `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated`,
-      {
-        headers: {
-          Accept: "application/vnd.github.mercy-preview+json",
-        },
-      }
+      `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated`
     );
-
     const repos = await res.json();
 
-    const featuredRepos = repos.filter(
-      (repo) =>
-        Array.isArray(repo.topics) &&
-        repo.topics.includes(FEATURED_TOPIC)
-    );
-
-    featuredRepos.slice(0, MAX_PROJECTS).forEach((repo) => {
+    repos.slice(0, MAX_PROJECTS).forEach((repo) => {
       const card = document.createElement("div");
       card.className = "project-card reveal";
 
@@ -61,7 +49,6 @@ async function loadProjects() {
 
       card.onclick = () => {
         if (!modal) return;
-
         modal.style.display = "flex";
         modalTitle.textContent = repo.name;
         modalDesc.textContent =
@@ -74,10 +61,11 @@ async function loadProjects() {
 
     revealOnScroll();
   } catch (err) {
-    console.error("Erro ao carregar projetos:", err);
+    console.error("Erro ao carregar projetos", err);
   }
 }
 
+/* ANIMAÇÃO */
 function revealOnScroll() {
   document.querySelectorAll(".reveal").forEach((el) => {
     if (el.getBoundingClientRect().top < window.innerHeight - 100) {
