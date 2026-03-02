@@ -13,13 +13,6 @@ https://brunooa.github.io/portfolio/
 
 ---
 
-## 🖥️ Preview
-
-> Em breve: adicione aqui um print ou gif do projeto  
-(Dica: print deixa o README muito mais profissional)
-
----
-
 ## 🚀 Funcionalidades
 
 - Exibição dos meus principais projetos
