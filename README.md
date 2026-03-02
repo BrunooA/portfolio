@@ -37,9 +37,6 @@ https://brunooa.github.io/portfolio/
 ```text
 portfolio/
 ├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-└── assets/
-    └── imagens/
+├── style.css
+├── script.js
+└── img/
