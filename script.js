@@ -33,18 +33,23 @@ async function loadProjects() {
 
   try {
     const res = await fetch(
-      `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated`
+      `https://api.github.com/users/${GITHUB_USER}/repos`
     );
     const repos = await res.json();
 
-    repos.slice(0, MAX_PROJECTS).forEach((repo) => {
+    const featuredRepos = repos
+      .filter(repo => repo.stargazers_count > 0) // só com estrelas
+      .sort((a, b) => b.stargazers_count - a.stargazers_count) // mais estrelas primeiro
+      .slice(0, MAX_PROJECTS); // limite
+
+    featuredRepos.forEach((repo) => {
       const card = document.createElement("div");
       card.className = "project-card reveal";
 
       card.innerHTML = `
         <h3>${repo.name}</h3>
         <p>${repo.description ?? "Projeto sem descrição."}</p>
-        <i class="bi bi-box-arrow-up-right"></i>
+        <i class="bi bi-star-fill"></i> ${repo.stargazers_count}
       `;
 
       card.onclick = () => {
@@ -76,3 +81,4 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 loadProjects();
+
