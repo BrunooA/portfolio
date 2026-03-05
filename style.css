@@ -143,11 +143,14 @@ body {
   background: #161b22;
   padding: 28px;
   border-radius: 14px;
-  transition: transform 0.3s ease;
+  border: 1px solid #1f2937;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.about-card:hover {
+.about-card:hover,
+.project-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 .about-card i {
@@ -221,13 +224,14 @@ body {
   background: #161b22;
   padding: 20px;
   border-radius: 12px;
+  border: 1px solid #1f2937;
   cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-8px);
-  background: #1f2937;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
 .project-card h3 {
@@ -256,6 +260,7 @@ body {
   background: #0e1117;
   padding: 5px;
 }
+
 
 /* =====================
    FIGMA
@@ -311,6 +316,7 @@ body {
   padding: 25px 25px 25px 60px;
   background: #161b22;
   border-radius: 14px;
+  border: 1px solid #1f2937;
 }
 
 .timeline-card::before {
@@ -338,6 +344,7 @@ body {
 
 .timeline-card.highlight {
   border: 1px solid #3b82f6;
+  box-shadow: 0 0 0 1px rgba(59,130,246,0.2);
 }
 
 
@@ -391,7 +398,7 @@ body {
 ===================== */
 
 body.light {
-  background: #f9fafb;
+  background: #eef2f7;
   color: #111827;
 }
 
@@ -408,11 +415,15 @@ body.light .timeline-card p {
   color: #4b5563;
 }
 
+/* CARDS NO MODO CLARO */
+
 body.light .about-card,
 body.light .project-card,
 body.light .timeline-card,
 body.light .modal-content {
   background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 
