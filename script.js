@@ -13,15 +13,13 @@ const MAX_PROJECTS = 4;
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("light");
-    themeToggle.innerHTML = document.body.classList.contains("light")
-      ? `<i class="bi bi-moon"></i>`
-      : `<i class="bi bi-sun"></i>`;
   });
 }
 
 /* MODAL */
 if (closeModal && modal) {
   closeModal.onclick = () => (modal.style.display = "none");
+
   window.onclick = (e) => {
     if (e.target === modal) modal.style.display = "none";
   };
@@ -29,56 +27,81 @@ if (closeModal && modal) {
 
 /* PROJETOS GITHUB */
 async function loadProjects() {
+
   if (!projectsGrid) return;
 
   try {
-    const res = await fetch(
-      `https://api.github.com/users/${GITHUB_USER}/repos`
-    );
+
+    const res = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos`);
+
+    if (!res.ok) {
+      throw new Error("Erro na API do GitHub");
+    }
+
     const repos = await res.json();
 
+    if (!Array.isArray(repos)) {
+      throw new Error("Resposta inesperada da API");
+    }
+
     const featuredRepos = repos
-      .filter(repo => repo.stargazers_count > 0) // só com estrelas
-      .sort((a, b) => b.stargazers_count - a.stargazers_count) // mais estrelas primeiro
-      .slice(0, MAX_PROJECTS); // limite
+      .filter(repo => !repo.fork)
+      .sort((a, b) => b.stargazers_count - a.stargazers_count)
+      .slice(0, MAX_PROJECTS);
+
+    projectsGrid.innerHTML = "";
 
     featuredRepos.forEach((repo) => {
+
       const card = document.createElement("div");
-      card.className = "project-card reveal";
+      card.className = "project-card";
 
       card.innerHTML = `
         <h3>${repo.name}</h3>
         <p>${repo.description ?? "Projeto sem descrição."}</p>
-        <i class="bi bi-star-fill"></i> ${repo.stargazers_count}
+        <p><i class="bi bi-star-fill"></i> ${repo.stargazers_count}</p>
       `;
 
       card.onclick = () => {
+
         if (!modal) return;
+
         modal.style.display = "flex";
+
         modalTitle.textContent = repo.name;
-        modalDesc.textContent =
-          repo.description ?? "Projeto sem descrição.";
+        modalDesc.textContent = repo.description ?? "Projeto sem descrição.";
         modalLink.href = repo.html_url;
+
       };
 
       projectsGrid.appendChild(card);
+
     });
 
-    revealOnScroll();
   } catch (err) {
-    console.error("Erro ao carregar projetos", err);
+
+    console.error("Erro ao carregar projetos:", err);
+
+    projectsGrid.innerHTML =
+      "<p>Não foi possível carregar os projetos do GitHub.</p>";
+
   }
 }
 
 /* ANIMAÇÃO */
 function revealOnScroll() {
+
   document.querySelectorAll(".reveal").forEach((el) => {
+
     if (el.getBoundingClientRect().top < window.innerHeight - 100) {
       el.classList.add("active");
     }
+
   });
+
 }
 
 window.addEventListener("scroll", revealOnScroll);
-loadProjects();
 
+loadProjects();
+revealOnScroll();
