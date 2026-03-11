@@ -484,3 +484,14 @@ body.light .modal-content {
   }
 
 }
+
+.project-details{
+margin-top:10px;
+padding-left:18px;
+font-size:14px;
+line-height:1.6;
+}
+
+.project-details li{
+margin-bottom:4px;
+}
