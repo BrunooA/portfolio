@@ -94,184 +94,88 @@
 
     </section>
 
-    <section class="skills reveal">
-
+    <section class="skills">
         <h2>Habilidades</h2>
 
-        <div class="skills-container">
+        <p class="skills-intro">
+            Minhas principais habilidades combinam design centrado no usuário com desenvolvimento front-end.
+        </p>
 
-            <div class="skill-group">
+        <div class="skills-big-card">
+
+            <div class="skills-column">
                 <h3>UX/UI</h3>
                 <ul>
                     <li>UX Research</li>
+                    <li>Figma</li>
                     <li>Wireframes</li>
                     <li>Prototipação</li>
-                    <li>Fluxo de Usuário</li>
-                    <li>Design de Interface</li>
                 </ul>
             </div>
 
-            <div class="skill-group">
-                <h3>Ferramentas</h3>
-                <ul>
-                    <li>Figma</li>
-                    <li>GitHub</li>
-                    <li>VS Code</li>
-                </ul>
-            </div>
-
-            <div class="skill-group">
-                <h3>Desenvolvimento</h3>
+            <div class="skills-column">
+                <h3>Front-end</h3>
                 <ul>
                     <li>HTML</li>
                     <li>CSS</li>
                     <li>JavaScript</li>
-                    <li>Responsividade</li>
+                </ul>
+            </div>
+
+            <div class="skills-column">
+                <h3>Ferramentas</h3>
+                <ul>
+                    <li>GitHub</li>
+                    <li>Figma</li>
+                    <li>VS Code</li>
                 </ul>
             </div>
 
         </div>
-
     </section>
-
     <section class="projects reveal">
 
         <h2>Projetos de UI/UX</h2>
 
         <div class="projects-grid">
 
-            <div class="project-card figma-card">
-
-                <img src="img/PlanoDeCarreira.jpeg" alt="Plano de Carreira">
-
+            <!-- CARD 1 -->
+            <div class="project-card">
+                <img src="img/PlanoDeCarreira.jpeg">
                 <h3>Plano de Carreira</h3>
 
-                <p>
-                    Plataforma criada para apoiar mulheres em situação de vulnerabilidade
-                    na construção de um plano de carreira e ingresso no mercado de trabalho.
-                </p>
-
-                <ul class="project-details">
-                    <li><strong>Problema:</strong> dificuldade de acesso a orientação profissional.</li>
-                    <li><strong>Minha função:</strong> UX Research, estrutura de telas e prototipação.</li>
-                    <li><strong>Ferramenta:</strong> Figma</li>
-                </ul>
-
-                <div class="design-process">
-
-                    <h4>Processo de Design</h4>
-
-                    <p><strong>Pesquisa</strong><br>
-                        Análise do público e conversa com empresa parceira.</p>
-
-                    <p><strong>Fluxo do usuário</strong><br>
-                        Usuária acessa → consome conteúdo → cria currículo.</p>
-
-                    <p><strong>Wireframes</strong><br>
-                        Estrutura inicial das telas e navegação.</p>
-
-                    <p><strong>Protótipo</strong><br>
-                        Protótipo interativo no Figma.</p>
-
-                    <p><strong>Resultado</strong><br>
-                        Protótipo funcional demonstrando fluxo de orientação profissional.</p>
-
+                <div class="project-buttons">
+                    <button onclick="openModal('modal1')">Ver descrição</button>
+                    <a href="https://www.figma.com/design/dkO8aghxv2Gj2ms10BqEkG/Plano-de-Carreira" target="_blank">
+                        Ver protótipo
+                    </a>
                 </div>
-
-                <a href="https://www.figma.com/design/dkO8aghxv2Gj2ms10BqEkG/Plano-de-Carreira" target="_blank">
-
-                    <i class="bi bi-figma"></i> Ver protótipo no Figma
-
-                </a>
-
             </div>
 
-            <div class="project-card figma-card">
-
-                <img src="img/LeitorDeAlimentos.jpeg" alt="Leitor de Alimentos">
-
+            <!-- CARD 2 -->
+            <div class="project-card">
+                <img src="img/LeitorDeAlimentos.jpeg">
                 <h3>Leitor de Alimentos</h3>
 
-                <p>
-                    Aplicativo para ajudar pessoas com alergias
-                    a identificar ingredientes de produtos.
-                </p>
-
-                <ul class="project-details">
-                    <li><strong>Problema:</strong> análise manual de ingredientes.</li>
-                    <li><strong>Minha função:</strong> ideia, UX/UI e protótipo.</li>
-                    <li><strong>Ferramenta:</strong> Figma</li>
-                </ul>
-
-                <div class="design-process">
-
-                    <h4>Processo de Design</h4>
-
-                    <p><strong>Fluxo</strong><br>
-                        Cadastro → escanear produto → alerta de alergia.</p>
-
-                    <p><strong>Wireframes</strong><br>
-                        Login, cadastro, escaneamento e resultado.</p>
-
-                    <p><strong>Protótipo</strong><br>
-                        Simulação do fluxo completo no Figma.</p>
-
-                    <p><strong>Resultado</strong><br>
-                        Protótipo demonstrando alerta automático de alergênicos.</p>
-
+                <div class="project-buttons">
+                    <button onclick="openModal('modal2')">Ver descrição</button>
+                    <a href="https://www.figma.com/design/R5GyNTrY4xVHd5yZ4cktPm/Leitor-de-Alimentos" target="_blank">
+                        Ver protótipo
+                    </a>
                 </div>
-
-                <a href="https://www.figma.com/design/R5GyNTrY4xVHd5yZ4cktPm/Leitor-de-Alimentos" target="_blank">
-
-                    <i class="bi bi-figma"></i> Ver protótipo no Figma
-
-                </a>
-
             </div>
 
-            <div class="project-card figma-card">
-
-                <img src="img/LinkaMais.jpeg" alt="Linka+">
-
+            <!-- CARD 3 -->
+            <div class="project-card">
+                <img src="img/LinkaMais.jpeg">
                 <h3>Linka+</h3>
 
-                <p>
-                    Plataforma de vagas para mulheres e pessoas LGBTQIA+ na área de tecnologia.
-                </p>
-
-                <ul class="project-details">
-                    <li><strong>Problema:</strong> baixa inclusão no mercado de tecnologia.</li>
-                    <li><strong>Minha função:</strong> UX/UI design e estrutura da navegação.</li>
-                    <li><strong>Ferramenta:</strong> Figma</li>
-                </ul>
-
-                <div class="design-process">
-
-                    <h4>Processo de Design</h4>
-
-                    <p><strong>Pesquisa</strong><br>
-                        Observação de dificuldades de colegas do curso.</p>
-
-                    <p><strong>Fluxo</strong><br>
-                        Cadastro → acessar vagas → candidatura.</p>
-
-                    <p><strong>Wireframes</strong><br>
-                        Estrutura de login, perfil e vagas.</p>
-
-                    <p><strong>Protótipo</strong><br>
-                        Protótipo navegável no Figma.</p>
-
-                    <p><strong>Resultado</strong><br>
-                        Protótipo demonstrando plataforma inclusiva de oportunidades.</p>
-
+                <div class="project-buttons">
+                    <button onclick="openModal('modal3')">Ver descrição</button>
+                    <a href="https://www.figma.com/design/rMbt84hSxUQ71gUeRK7YDn/Linka-" target="_blank">
+                        Ver protótipo
+                    </a>
                 </div>
-
-                <a href="https://www.figma.com/design/rMbt84hSxUQ71gUeRK7YDn/Linka-" target="_blank">
-
-                    <i class="bi bi-figma"></i> Ver protótipo no Figma
-
-                </a>
-
             </div>
 
         </div>
@@ -356,6 +260,106 @@
         </div>
 
     </section>
+
+    <div id="modal1" class="modal">
+
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+
+            <h2>Plano de Carreira</h2>
+
+            <p>
+                Plataforma criada para apoiar mulheres em situação de vulnerabilidade
+                na construção de um plano de carreira e ingresso no mercado de trabalho.
+            </p>
+
+            <ul>
+                <li><strong>Problema:</strong> dificuldade de acesso a orientação profissional.</li>
+                <li><strong>Minha função:</strong> UX Research, estrutura de telas e prototipação.</li>
+                <li><strong>Ferramenta:</strong> Figma</li>
+            </ul>
+
+            <h4>Processo</h4>
+            <p><strong>Pesquisa:</strong> análise do público e conversa com empresa.</p>
+            <p><strong>Fluxo:</strong> usuária acessa → consome conteúdo → cria currículo.</p>
+            <p><strong>Resultado:</strong> protótipo funcional.</p>
+
+        </div>
+
+    </div>
+
+    <!-- MODAIS -->
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+
+            <h2>Plano de Carreira</h2>
+
+            <p>
+                Plataforma criada para apoiar mulheres em situação de vulnerabilidade
+                na construção de um plano de carreira e ingresso no mercado de trabalho.
+            </p>
+
+            <ul>
+                <li><strong>Problema:</strong> dificuldade de acesso a orientação profissional.</li>
+                <li><strong>Minha função:</strong> UX Research, estrutura de telas e prototipação.</li>
+                <li><strong>Ferramenta:</strong> Figma</li>
+            </ul>
+
+            <h4>Processo</h4>
+            <p><strong>Pesquisa:</strong> análise do público e conversa com empresa parceira.</p>
+            <p><strong>Fluxo:</strong> usuária acessa → consome conteúdo → cria currículo.</p>
+            <p><strong>Wireframes:</strong> estrutura inicial das telas.</p>
+            <p><strong>Resultado:</strong> protótipo funcional demonstrando fluxo completo.</p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+
+            <h2>Leitor de Alimentos</h2>
+
+            <p>
+                Aplicativo para ajudar pessoas com alergias a identificar ingredientes.
+            </p>
+
+            <ul>
+                <li><strong>Problema:</strong> análise manual de ingredientes.</li>
+                <li><strong>Minha função:</strong> UX/UI e protótipo.</li>
+                <li><strong>Ferramenta:</strong> Figma</li>
+            </ul>
+
+            <h4>Processo</h4>
+            <p><strong>Fluxo:</strong> cadastro → escanear → alerta.</p>
+            <p><strong>Wireframes:</strong> login, cadastro e resultado.</p>
+            <p><strong>Resultado:</strong> alerta automático de alergênicos.</p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+
+            <h2>Linka+</h2>
+
+            <p>
+                Plataforma de vagas para mulheres e pessoas LGBTQIA+.
+            </p>
+
+            <ul>
+                <li><strong>Problema:</strong> baixa inclusão no mercado.</li>
+                <li><strong>Minha função:</strong> UX/UI design.</li>
+                <li><strong>Ferramenta:</strong> Figma</li>
+            </ul>
+
+            <h4>Processo</h4>
+            <p><strong>Pesquisa:</strong> análise de dificuldades reais.</p>
+            <p><strong>Fluxo:</strong> cadastro → vagas → candidatura.</p>
+            <p><strong>Resultado:</strong> plataforma inclusiva.</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 
