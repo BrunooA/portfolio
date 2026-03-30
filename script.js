@@ -1,13 +1,4 @@
-const projectsGrid = document.getElementById("projects-grid");
-const modal = document.getElementById("project-modal");
-const modalTitle = document.getElementById("modal-title");
-const modalDesc = document.getElementById("modal-description");
-const modalLink = document.getElementById("modal-link");
-const closeModal = document.getElementById("close-modal");
 const themeToggle = document.getElementById("theme-toggle");
-
-const GITHUB_USER = "BrunooA";
-const MAX_PROJECTS = 4;
 
 /* TEMA */
 if (themeToggle) {
@@ -16,92 +7,32 @@ if (themeToggle) {
   });
 }
 
-/* MODAL */
-if (closeModal && modal) {
-  closeModal.onclick = () => (modal.style.display = "none");
-
-  window.onclick = (e) => {
-    if (e.target === modal) modal.style.display = "none";
-  };
+/* MODAL NOVO */
+function openModal(id) {
+  document.getElementById(id).style.display = "flex";
 }
 
-/* PROJETOS GITHUB */
-async function loadProjects() {
-
-  if (!projectsGrid) return;
-
-  try {
-
-    const res = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos`);
-
-    if (!res.ok) {
-      throw new Error("Erro na API do GitHub");
-    }
-
-    const repos = await res.json();
-
-    if (!Array.isArray(repos)) {
-      throw new Error("Resposta inesperada da API");
-    }
-
-    const featuredRepos = repos
-      .filter(repo => !repo.fork)
-      .sort((a, b) => b.stargazers_count - a.stargazers_count)
-      .slice(0, MAX_PROJECTS);
-
-    projectsGrid.innerHTML = "";
-
-    featuredRepos.forEach((repo) => {
-
-      const card = document.createElement("div");
-      card.className = "project-card";
-
-      card.innerHTML = `
-        <h3>${repo.name}</h3>
-        <p>${repo.description ?? "Projeto sem descrição."}</p>
-        <p><i class="bi bi-star-fill"></i> ${repo.stargazers_count}</p>
-      `;
-
-      card.onclick = () => {
-
-        if (!modal) return;
-
-        modal.style.display = "flex";
-
-        modalTitle.textContent = repo.name;
-        modalDesc.textContent = repo.description ?? "Projeto sem descrição.";
-        modalLink.href = repo.html_url;
-
-      };
-
-      projectsGrid.appendChild(card);
-
-    });
-
-  } catch (err) {
-
-    console.error("Erro ao carregar projetos:", err);
-
-    projectsGrid.innerHTML =
-      "<p>Não foi possível carregar os projetos do GitHub.</p>";
-
-  }
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
 }
+
+/* FECHAR CLICANDO FORA */
+window.onclick = function (e) {
+  document.querySelectorAll(".modal").forEach((modal) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+};
 
 /* ANIMAÇÃO */
 function revealOnScroll() {
-
   document.querySelectorAll(".reveal").forEach((el) => {
-
     if (el.getBoundingClientRect().top < window.innerHeight - 100) {
       el.classList.add("active");
     }
-
   });
-
 }
 
 window.addEventListener("scroll", revealOnScroll);
-
-loadProjects();
 revealOnScroll();
