@@ -427,10 +427,15 @@ color:#4b5563;
 body.light .about-card,
 body.light .project-card,
 body.light .timeline-card,
+body.light .skills-big-card,
 body.light .modal-content{
 background:#ffffff;
 border:1px solid #e5e7eb;
 box-shadow:0 4px 10px rgba(0,0,0,.05);
+}
+
+body.light .skills-column li{
+color:#374151;
 }
 
 
